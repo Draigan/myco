@@ -8,10 +8,14 @@ import FetchUpdate from "./helpers/FetchUpdate";
 import { useEffect, useState } from "react";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
   // const { data, error, loading }: any = useFetch(
   //   "http://192.168.2.32:5000/update"
   // );
-  FetchUpdate("http://192.168.2.32:5000/update");
+  FetchUpdate("http://192.168.2.32:5000/update", setLoading);
+  if (loading) {
+    <View style={styles.container}> LOADING....</View>;
+  }
   return (
     <NavigationContainer>
       <PaperProvider>
