@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "tutorials": [
+    {
+      "name": "tutOne",
+      "textdata": "cool mang"
+    },
+    {
+      "name": "tutTwo",
+      "textdata": "cool mang two"
+    },
+    {
+      "name": "tutThree",
+      "textdata": "cool mang 3 "
+    },
+    {
+      "name": "tutFour",
+      "textdata": "cool mang 4 "
+    },
+    {
+      "name": "tutFive",
+      "textdata": "cool mang 5"
+    },
+    {
+      "name": "tutSix",
+      "textdata": "cool mang 6"
+    }
+  ],
+  "shopItems": []
+}

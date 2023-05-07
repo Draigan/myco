@@ -1,9 +1,8 @@
 import { View, Button, Text, StyleSheet } from "react-native";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 const Home = ({ navigation }: any) => {
   return (
     <View style={styles.center}>
-      <Text>This is the home screen</Text>
       <Button
         title="Go to About Screen"
         onPress={() => navigation.navigate("Test")}
@@ -20,5 +19,4 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
 export default Home;
