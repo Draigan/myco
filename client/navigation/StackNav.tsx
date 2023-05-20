@@ -16,10 +16,14 @@ const screenOptionStyle = {
   headerShown: false,
 };
 
-function HomeStackNav() {
+function HomeStackNav(tutorialsData) {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="Home"
+        tutorialsData={tutorialsData}
+        component={Home}
+      />
       <Stack.Screen
         name="Test"
         options={{ headerShown: true }}

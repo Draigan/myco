@@ -1,8 +1,9 @@
 import { View, Button, Text, StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-const Home = ({ navigation }: any) => {
+const Home = ({ navigation }: any, tutorialsData) => {
   return (
     <View style={styles.center}>
+      <Text> {tutorialsData.name}</Text>
       <Button
         title="Go to About Screen"
         onPress={() => navigation.navigate("Test")}

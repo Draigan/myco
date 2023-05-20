@@ -1,29 +1,38 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
+import { registerRootComponent } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeStackNav } from "./navigation/StackNav";
 import BottomNav from "./navigation/BottomNav";
-import { Provider as PaperProvider } from "react-native-paper";
+import {
+  Provider as PaperProvider,
+  ActivityIndicator,
+} from "react-native-paper";
 import useFetch from "./hooks/useFetch";
 import FetchUpdate from "./helpers/FetchUpdate";
 import { useEffect, useState } from "react";
-
-export default function App() {
-  const [loading, setLoading] = useState(true);
-  // const { data, error, loading }: any = useFetch(
-  //   "http://192.168.2.32:5000/update"
-  // );
-  FetchUpdate("http://192.168.2.32:5000/update", setLoading);
+import { selectFromTutorials } from "./helpers/SqlUpdate";
+export function App() {
+  const { loading, tutorials, setTutorials } = FetchUpdate();
+  // selectFromTutorials().then((response: any) => {
+  //   setTutorials(response);
+  // });
   if (loading) {
-    <View style={styles.container}> LOADING....</View>;
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator animating={true} color={"green"} size={"large"} />
+        <Text>Updating Tutorials...</Text>
+      </View>
+    );
   }
   return (
     <NavigationContainer>
       <PaperProvider>
-        <BottomNav />
+        <BottomNav tutorialsData={tutorials} />
       </PaperProvider>
     </NavigationContainer>
   );
 }
+registerRootComponent(App);
 
 const styles = StyleSheet.create({
   container: {
