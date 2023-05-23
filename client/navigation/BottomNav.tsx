@@ -9,9 +9,11 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import Entypo from "@expo/vector-icons/Entypo";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import TutorialsDrawerNav from "./TutorialDrawerNav";
+import ShopDrawerNav from "./ShopDrawerNav";
 const Tab = createBottomTabNavigator();
 
-export default function BottomNav(tutorialsData) {
+export default function BottomNav() {
   return (
     <>
       <Tab.Navigator
@@ -19,7 +21,8 @@ export default function BottomNav(tutorialsData) {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === "Home") {
+            // Change icons here example: route.name === "Home"
+            if (route.name) {
               iconName = focused
                 ? "ios-information-circle"
                 : "ios-information-circle-outline";
@@ -36,17 +39,18 @@ export default function BottomNav(tutorialsData) {
       >
         <Tab.Screen
           name="Home"
-          initialParams={{ tutorials: tutorialsData }}
           component={HomeDrawerNav}
           options={{ headerShown: false }}
         />
         <Tab.Screen
           name="Tutorials"
-          initialParams={{ tutorials: tutorialsData }}
-          component={Tutorials}
+          component={TutorialsDrawerNav}
+          options={{
+            headerShown: false,
+          }}
         />
         <Tab.Screen name="MyGrow" component={MyGrow} />
-        <Tab.Screen name="Shop" component={Shop} />
+        <Tab.Screen name="Shop" component={ShopDrawerNav} />
       </Tab.Navigator>
     </>
   );

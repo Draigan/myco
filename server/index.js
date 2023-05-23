@@ -25,7 +25,7 @@ app.get("/update", (req, res) => {
 });
 
 app.get("/version", (req, res) => {
-  res.send({ version: 1 });
+  res.send({ version: 2 });
 });
 
 // get with params

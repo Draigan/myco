@@ -40,7 +40,7 @@ export function createTableConfig() {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "CREATE TABLE IF NOT EXISTS config (version INTEGER)",
+        "CREATE TABLE IF NOT EXISTS config (id INTEGER PRIMARY KEY AUTOINCREMENT, version INTEGER)",
         null,
         () => {
           return resolve();
@@ -88,7 +88,7 @@ export function insertIntoConfig() {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "INSERT INTO config VALUES (0)",
+        "INSERT INTO config (version) VALUES (1)",
         null,
         () => {
           return resolve();

@@ -1,35 +1,36 @@
-import { View, TouchableOpacity, Button, Text, StyleSheet } from "react-native";
-import { List } from "react-native-paper";
+import { useState } from "react";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { Button, Card, List } from "react-native-paper";
+import { useSelector } from "react-redux";
+import TutorialSearchBar from "../components/TutorialSearch";
+import { globalStyles } from "../styles/global";
+const Tutorials = () => {
+  // Ask redux for the tutorials
+  const tutorials = useSelector((state: RootState) => state.tutorial.value);
+  const [filteredTutorial, setFilteredTutorial] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-const Tutorials = ({ navigation, route }) => {
-  const { tutorials } = route.params;
   return (
-    <View>
-      <List.AccordionGroup>
-        {tutorials.tutorialsData.map((tutorial) => {
-          {
-            console.log(tutorial);
-          }
+    <View style={globalStyles.center}>
+      <Text> {searchQuery}</Text>
+      <TutorialSearchBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
+      {tutorials
+        .filter((item) =>
+          item.name.toUpperCase().includes(searchQuery.toUpperCase())
+        )
+        .map((tutorial) => {
           return (
-            <List.Accordion
-              title={`${tutorial.name}`}
-              key={`${tutorial.id}`}
-              id={`${tutorial.id}`}
-            >
-              <TouchableOpacity>
-                <List.Item title="First Item " />
-              </TouchableOpacity>
-              <List.Item title="Second Item" />
-            </List.Accordion>
+            <View key={tutorial.id}>
+              <Text> {tutorial.name}</Text>
+            </View>
           );
         })}
-      </List.AccordionGroup>
     </View>
   );
 };
-// {tutorial.subtutorials.map((subtutorial) => {
-//   <List.Item title="First Item " />;
-// })}
 
 const styles = StyleSheet.create({
   center: {

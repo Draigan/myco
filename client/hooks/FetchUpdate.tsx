@@ -9,15 +9,19 @@ import {
   selectFromConfig,
   insertIntoConfig,
   createTableConfig,
-} from "./SqlUpdate";
+} from "../SQL/SqlUpdate";
+
+const ipLocal = "http://192.168.2.90:5000";
 
 export default function FetchUpdate() {
   const [loading, setLoading] = useState(true);
   const [tutorials, setTutorials] = useState(true);
+
+  // Check if the version is up to date
   function compareVersions(currentVersion) {
     return new Promise((resolve, reject) => {
       axios
-        .get("http://192.168.2.32:5000/version")
+        .get(`${ipLocal}/version`)
         .then((response) => {
           if (!response) reject("serverfail");
           let serverVersion = response.data.version;
@@ -26,7 +30,8 @@ export default function FetchUpdate() {
           if (serverVersion > currentVersion) {
             return resolve(true);
           } else {
-            return reject("Everything is up to date");
+            console.log("Everything is up to date");
+            return reject();
           }
         })
         .catch((error) => reject(error));
@@ -34,10 +39,9 @@ export default function FetchUpdate() {
   }
   useEffect(() => {
     console.log("Fetching Updates");
-    // dropTableConfig()
-    //   .then(() => {
-    //     return createTableConfig();
-    //   })
+    dropTableConfig().then(() => {
+      return createTableConfig();
+    });
     createTableConfig()
       .then(() => {
         return insertIntoConfig();
@@ -56,7 +60,7 @@ export default function FetchUpdate() {
         return createTableTutorials();
       })
       .then(() => {
-        return axios.get("http://192.168.2.32:5000/update");
+        return axios.get(`${ipLocal}/update`);
       })
       .then((response) => {
         return insertIntoTutorials(response.data);
