@@ -3,6 +3,7 @@ import { HomeStackNav } from "../navigation/StackNav";
 import { Text } from "react-native";
 import Tutorials from "../screens/Tutorials";
 import { useSelector } from "react-redux";
+import { HamburgerMenu } from "../components/HamburgerMenu";
 
 const Drawer = createDrawerNavigator();
 
@@ -13,10 +14,19 @@ export default function HomeDrawerNav({ navigation, route }) {
       <Drawer.Navigator>
         <Drawer.Screen
           name="HomeStackNav"
-          options={{ headerShown: true, headerTitle: "" }}
+          options={{
+            headerTintColor: "#6146A5",
+            headerShown: true,
+            headerTitle: "",
+          }}
           component={HomeStackNav}
         />
       </Drawer.Navigator>
     </>
   );
 }
+// headerLeft: (props) => {
+//   const { tintColor, pressColor, pressOpacity, labelVisible } =
+//     props;
+//   return <HamburgerMenu {...props} />;
+// },

@@ -1,4 +1,11 @@
-import { StyleSheet, Keyboard, Text, View, TextInput } from "react-native";
+import {
+  DismissKeyboardView,
+  StyleSheet,
+  Keyboard,
+  Text,
+  View,
+  TextInput,
+} from "react-native";
 import { registerRootComponent } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeStackNav } from "./navigation/StackNav";

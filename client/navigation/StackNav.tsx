@@ -20,11 +20,7 @@ function HomeStackNav(tutorialsData) {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="TestTwo" component={Home} />
-      <Stack.Screen
-        name="Test"
-        options={{ headerShown: true }}
-        component={Test}
-      />
+      <Stack.Screen name="Test" component={Test} />
     </Stack.Navigator>
   );
 }

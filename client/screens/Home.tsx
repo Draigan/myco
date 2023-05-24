@@ -13,13 +13,13 @@ const Home = ({ navigation }: any) => {
 
         {/* Hero */}
         <Card style={homeStyles.card}>
-          <Card.Cover source={require("../assets/sun.png")} />
+          <Card.Cover source={require("../assets/monotub1.jpg")} />
           <Card.Title title="What we do" />
           <Card.Content>
             <Text>
               Myco Deity is your handy mycology assistant. It is designed to be
               a reference for all mycology enthusiests and to provide a guided
-              experience for the grow kits that I create and sell.
+              experience for the grow kits that I create.
             </Text>
           </Card.Content>
           <Card.Actions>

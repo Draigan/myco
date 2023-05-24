@@ -1,6 +1,12 @@
-import * as React from "react";
 import Tutorials from "../screens/Tutorials";
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  TouchableWithoutFeedback,
+  DismissKeyboardView,
+  Keyboard,
+  View,
+  ScrollView,
+} from "react-native";
 import { Text, BottomNavigation } from "react-native-paper";
 import MyGrow from "../screens/MyGrow";
 import Shop from "../screens/Shop";
@@ -14,8 +20,9 @@ import ShopDrawerNav from "./ShopDrawerNav";
 const Tab = createBottomTabNavigator();
 
 export default function BottomNav() {
+  //<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
   return (
-    <>
+    <View style={{ flex: 1 }}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -52,6 +59,6 @@ export default function BottomNav() {
         <Tab.Screen name="MyGrow" component={MyGrow} />
         <Tab.Screen name="Shop" component={ShopDrawerNav} />
       </Tab.Navigator>
-    </>
+    </View>
   );
 }

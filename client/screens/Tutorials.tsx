@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import {
+  ScrollView,
+  View,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Keyboard,
+} from "react-native";
 import { Button, Card, List } from "react-native-paper";
 import { useSelector } from "react-redux";
 import TutorialSearchBar from "../components/TutorialSearch";
@@ -11,8 +19,7 @@ const Tutorials = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <View style={globalStyles.center}>
-      <Text> {searchQuery}</Text>
+    <ScrollView>
       <TutorialSearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -28,7 +35,7 @@ const Tutorials = () => {
             </View>
           );
         })}
-    </View>
+    </ScrollView>
   );
 };
 
