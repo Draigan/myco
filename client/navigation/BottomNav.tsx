@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import MyGrow from "../screens/MyGrow";
 import HomeDrawerNav from "./HomeDrawerNav";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -7,12 +7,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TutorialsDrawerNav from "./TutorialDrawerNav";
 import ShopDrawerNav from "./ShopDrawerNav";
 const Tab = createBottomTabNavigator();
-
 export default function BottomNav() {
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          tabBarHideOnKeyboard: Platform.OS !== "ios",
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             // Change icons here example: route.name === "Home"

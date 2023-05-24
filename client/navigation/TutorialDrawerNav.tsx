@@ -4,6 +4,7 @@ import { Text } from "react-native";
 import Tutorials from "../screens/Tutorials";
 import { useSelector } from "react-redux";
 import { ScrollView } from "react-native-gesture-handler";
+import Test from "../screens/Test";
 
 const Drawer = createDrawerNavigator();
 

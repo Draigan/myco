@@ -19,8 +19,30 @@ const screenOptionStyle = {
 function HomeStackNav(tutorialsData) {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="TestTwo" component={Home} />
-      <Stack.Screen name="Test" component={Test} />
+      <Stack.Screen
+        name="HomeStackNav"
+        options={{
+          headerShown: false,
+          headerTintColor: "black",
+          headerStyle: {
+            backgroundColor: "gray",
+            shadowColor: "transparent",
+          },
+        }}
+        component={Home}
+      />
+      <Stack.Screen
+        name="dixie"
+        options={{
+          headerShown: true,
+          headerTintColor: "black",
+          headerStyle: {
+            backgroundColor: "#f1f1f1",
+            shadowColor: "transparent",
+          },
+        }}
+        component={Test}
+      />
     </Stack.Navigator>
   );
 }

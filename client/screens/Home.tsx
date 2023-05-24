@@ -2,13 +2,15 @@ import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Text, Button, Card } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { StackActions } from "@react-navigation/native";
+import Test from "./Test";
 
 const Home = ({ navigation }: any) => {
   return (
     <ScrollView>
       <View style={styles.center}>
         {/* Logos */}
-        <Text variant="displayMedium">Myco Deity</Text>
+        <Text variant="headlineLarge">Myco Deity</Text>
         <Text variant="headlineSmall">Mycologists Tool</Text>
         {/* Hero */}
         <Card style={homeStyles.card}>
@@ -25,7 +27,7 @@ const Home = ({ navigation }: any) => {
             <Button
               icon="rocket"
               mode="outlined"
-              onPress={() => console.log("Pressed")}
+              onPress={() => navigation.navigate("dixie")}
             >
               Learn More...
             </Button>
@@ -35,18 +37,15 @@ const Home = ({ navigation }: any) => {
         <Card style={homeStyles.card}>
           <Card.Title title="Have you just baught a grow kit?" />
           <Card.Content>
-            <Text>
-              Myco Deity is a one man band and I am just starting out. Please
-              consider buying one of my grow kits, or other items from the shop.
-            </Text>
+            <Text>I have created a guided experience for my grow kits.</Text>
           </Card.Content>
           <Card.Actions>
             <Button
               icon="mushroom"
               mode="contained"
-              onPress={() => console.log("Pressed")}
+              onPress={() => navigation.navigate("MyGrow")}
             >
-              Begin journey
+              Start new grow
             </Button>
           </Card.Actions>
         </Card>
@@ -63,14 +62,14 @@ const Home = ({ navigation }: any) => {
             <Button
               icon="store"
               mode="contained"
-              onPress={() => console.log("Pressed")}
+              onPress={() => navigation.navigate("Shop")}
             >
               Buy grow kits
             </Button>
             <Button
               icon="coffee"
               mode="outlined"
-              onPress={() => console.log("Pressed")}
+              onPress={() => navigation.navigate("Shop")}
             >
               Buy me a coffee
             </Button>

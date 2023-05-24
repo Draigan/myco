@@ -4,7 +4,6 @@ const MyGrow = () => {
   return (
     <View style={styles.center}>
       <Text>This is the mygrow screen</Text>
-      <Button title="Go to About Screen" />
     </View>
   );
 };

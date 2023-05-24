@@ -4,7 +4,7 @@ import { Text } from "react-native";
 import Tutorials from "../screens/Tutorials";
 import { useSelector } from "react-redux";
 import { HamburgerMenu } from "../components/HamburgerMenu";
-
+import Home from "../screens/Home";
 const Drawer = createDrawerNavigator();
 
 export default function HomeDrawerNav({ navigation, route }) {
@@ -13,7 +13,7 @@ export default function HomeDrawerNav({ navigation, route }) {
     <>
       <Drawer.Navigator>
         <Drawer.Screen
-          name="HomeStackNav"
+          name="HomeDrawerNav"
           options={{
             headerTintColor: "#6146A5",
             headerShown: true,
@@ -25,8 +25,3 @@ export default function HomeDrawerNav({ navigation, route }) {
     </>
   );
 }
-// headerLeft: (props) => {
-//   const { tintColor, pressColor, pressOpacity, labelVisible } =
-//     props;
-//   return <HamburgerMenu {...props} />;
-// },
