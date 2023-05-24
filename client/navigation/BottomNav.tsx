@@ -1,46 +1,40 @@
-import Tutorials from "../screens/Tutorials";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  TouchableWithoutFeedback,
-  DismissKeyboardView,
-  Keyboard,
-  View,
-  ScrollView,
-} from "react-native";
-import { Text, BottomNavigation } from "react-native-paper";
+import { View } from "react-native";
 import MyGrow from "../screens/MyGrow";
-import Shop from "../screens/Shop";
 import HomeDrawerNav from "./HomeDrawerNav";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
-import Entypo from "@expo/vector-icons/Entypo";
+import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TutorialsDrawerNav from "./TutorialDrawerNav";
 import ShopDrawerNav from "./ShopDrawerNav";
 const Tab = createBottomTabNavigator();
 
 export default function BottomNav() {
-  //<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             // Change icons here example: route.name === "Home"
-            if (route.name) {
-              iconName = focused
-                ? "ios-information-circle"
-                : "ios-information-circle-outline";
-            } else if (route.name === "Settings") {
-              iconName = focused ? "ios-list" : "ios-list-outline";
+            if (route.name === "Home") {
+              iconName = focused ? "ios-home" : "ios-home-outline";
+              color = focused ? "pink" : "gray";
+            } else if (route.name === "Tutorials") {
+              iconName = focused ? "ios-book" : "ios-book-outline";
+              color = focused ? "#6146A5" : "gray";
+            } else if (route.name === "MyGrow") {
+              iconName = focused ? "ios-earth" : "ios-earth-outline";
+              color = focused ? "green" : "gray";
+            } else if (route.name === "Shop") {
+              iconName = focused ? "ios-cart" : "ios-cart-outline";
+              color = focused ? "teal" : "gray";
+            } else if (route.name === "Shop") {
             }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "tomato",
+          tabBarActiveTintColor: "#6146A5",
           tabBarInactiveTintColor: "gray",
         })}
       >

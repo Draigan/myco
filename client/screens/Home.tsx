@@ -9,8 +9,7 @@ const Home = ({ navigation }: any) => {
       <View style={styles.center}>
         {/* Logos */}
         <Text variant="displayMedium">Myco Deity</Text>
-        <Text variant="headlineMedium">Lets Grow Together</Text>
-
+        <Text variant="headlineSmall">Mycologists Tool</Text>
         {/* Hero */}
         <Card style={homeStyles.card}>
           <Card.Cover source={require("../assets/monotub1.jpg")} />
@@ -32,7 +31,6 @@ const Home = ({ navigation }: any) => {
             </Button>
           </Card.Actions>
         </Card>
-
         {/* Just Baught A Grow Kit */}
         <Card style={homeStyles.card}>
           <Card.Title title="Have you just baught a grow kit?" />
@@ -52,7 +50,6 @@ const Home = ({ navigation }: any) => {
             </Button>
           </Card.Actions>
         </Card>
-
         {/* Support Us */}
         <Card style={homeStyles.card}>
           <Card.Title title="Support Myco Deity" />
