@@ -10,8 +10,8 @@ const Home = ({ navigation }: any) => {
     <ScrollView>
       <View style={styles.center}>
         {/* Logos */}
-        <Text variant="headlineLarge">Myco Deity</Text>
-        <Text variant="headlineSmall">Mycologists Tool</Text>
+        <Text variant="headlineLarge">Shroom Deity</Text>
+        <Text variant="headlineSmall">Mycology Tool</Text>
         {/* Hero */}
         <Card style={homeStyles.card}>
           <Card.Cover source={require("../assets/monotub1.jpg")} />

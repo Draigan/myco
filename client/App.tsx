@@ -18,15 +18,14 @@ import {
   ActivityIndicator,
 } from "react-native-paper";
 import useFetch from "./hooks/useFetch";
-import FetchUpdate from "./hooks/FetchUpdate";
+import useUpdate from "./hooks/useUpdate";
 import { useEffect, useState } from "react";
 import { selectFromTutorials } from "./SQL/SqlUpdate";
 import Main from "./Main";
 import { store } from "./redux/store/store";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 export function App() {
-  const { loading, tutorials, setTutorials } = FetchUpdate();
+  const { loading, tutorials, setTutorials } = useUpdate();
 
   if (loading) {
     return (

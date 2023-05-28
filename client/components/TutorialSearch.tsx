@@ -10,6 +10,7 @@ const TutorialSearchBar = ({ searchQuery, setSearchQuery }) => {
   return (
     <View style={{ width: "100%" }}>
       <Searchbar
+        autoFocus
         mode="bar"
         placeholder="Search"
         onChangeText={onChangeSearch}

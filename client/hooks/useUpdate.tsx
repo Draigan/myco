@@ -9,9 +9,13 @@ import {
   selectFromConfig,
   insertIntoConfig,
   createTableConfig,
+  dropTableJSON,
+  createTableJSON,
+  insertIntoJSON,
+  selectFromJSON,
 } from "../SQL/SqlUpdate";
 
-const ipLocal = "http://192.168.2.90:5000";
+const ipLocal = "http://192.168.2.32:5000";
 
 export default function FetchUpdate() {
   const [loading, setLoading] = useState(true);
@@ -38,51 +42,29 @@ export default function FetchUpdate() {
     });
   }
   useEffect(() => {
-    console.log("Fetching Updates");
-    dropTableConfig().then(() => {
-      return createTableConfig();
-    });
-    createTableConfig()
-      .then(() => {
-        return insertIntoConfig();
-      })
-      .then(() => {
-        return selectFromConfig();
-      })
-      .then((currentVersion) => {
-        return compareVersions(currentVersion);
-      })
-      .then(() => {
-        return dropTableTutorials();
-      })
-      .then(() => {
-        console.log("fromCreate");
-        return createTableTutorials();
-      })
-      .then(() => {
-        return axios.get(`${ipLocal}/update`);
-      })
-      .then((response) => {
-        return insertIntoTutorials(response.data);
-      })
-      .then(() => {
-        return selectFromTutorials();
-      })
-      .then((response: any) => {
-        setTutorials(response);
-        console.log(tutorials);
-      })
-      .catch((err) => {
-        if (err) console.error(err);
-        selectFromTutorials().then((response: any) => {
-          setTutorials(response);
-        });
-      })
-      .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 0);
-      });
+    (async function () {
+      try {
+        const dropConfig = await dropTableConfig();
+        const dropJSON = await dropTableJSON();
+        const createJSON = await createTableJSON();
+        const createConfig = await createTableConfig();
+        const insertConfig = await insertIntoConfig();
+        const currentVersion = await selectFromConfig();
+        const compare = await compareVersions(currentVersion);
+
+        if (compare !== true) return console.log("No update required");
+
+        const data = await axios.get(`${ipLocal}/update`);
+        const insertJSON = await insertIntoJSON(data.data);
+        const selectJSON = await selectFromJSON();
+        const JSONparsed = await JSON.parse(selectJSON[0].data);
+        setTutorials(JSONparsed);
+        setLoading(false);
+        console.log(JSONparsed.version);
+      } catch (error) {
+        console.error(error, "There was an error during update");
+      }
+    })();
   }, []);
 
   return { loading, tutorials, setTutorials };

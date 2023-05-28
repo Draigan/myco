@@ -12,7 +12,18 @@ export default function Main({ tutorialsData }) {
   const value = useSelector((state: RootState) => state.tutorial.value);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setTutorial(tutorialsData));
+    // const tutorialsModified = tutorialsData.map((tutorial, index) => {
+    //   let subs = JSON.parse(tutorial.subtutorials);
+    //   tutorial.subtutorials = subs;
+    //
+    //   console.log(tutorial.subtutorials[0].name);
+    //
+    //   return tutorial;
+    // });
+
+    // console.log("MODIFIED", tutorialsModified);
+    console.log(tutorialsData, "from main");
+    dispatch(setTutorial(tutorialsData.tutorials));
   }, []);
-  return <BottomNav tutorialsData={tutorialsData} />;
+  return <BottomNav />;
 }

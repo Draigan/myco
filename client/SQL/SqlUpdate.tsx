@@ -20,6 +20,22 @@ export function dropTableTutorials() {
     });
   });
 }
+export function dropTableJSON() {
+  return new Promise<void>((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "DROP TABLE IF EXISTS json",
+        null,
+        (tx, results) => {
+          return resolve();
+        },
+        (): any => {
+          reject("dropTableJSON Failed");
+        }
+      );
+    });
+  });
+}
 export function dropTableConfig() {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
@@ -52,12 +68,28 @@ export function createTableConfig() {
     });
   });
 }
+export function createTableJSON() {
+  return new Promise<void>((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "CREATE TABLE IF NOT EXISTS json (data VARCHAR)",
+        null,
+        () => {
+          return resolve();
+        },
+        (): any => {
+          return reject("createTableJSON Failed");
+        }
+      );
+    });
+  });
+}
 
 export function createTableTutorials() {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "CREATE TABLE IF NOT EXISTS tutorials (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, textdata TEXT)",
+        "CREATE TABLE IF NOT EXISTS tutorials (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, textdata TEXT, subtutorials TEXT)",
         null,
         () => {
           return resolve();
@@ -71,11 +103,16 @@ export function insertIntoTutorials(update) {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
       update.tutorials.forEach((tutorial) => {
+        //let subtutorials = JSON.stringify(tutorial.subtutorials);
         tx.executeSql(
-          "INSERT INTO tutorials (name, textdata) VALUES(?,?)",
-          [tutorial.name, tutorial.textdata],
+          "INSERT INTO tutorials (name, textdata, subtutorials) VALUES(?,?,?)",
+          [
+            tutorial.name,
+            tutorial.textdata,
+            JSON.stringify(tutorial.subtutorials),
+          ],
           () => {
-            return resolve();
+            return resolve(update);
           },
 
           (): any => reject("insertIntoTutorials Failed")
@@ -84,6 +121,21 @@ export function insertIntoTutorials(update) {
     });
   });
 }
+export function insertIntoJSON(update) {
+  return new Promise<void>((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "INSERT INTO json (data) VALUES (?)",
+        [JSON.stringify(update)],
+        () => {
+          return resolve();
+        },
+        (): any => reject("insertIntoJSON Failed")
+      );
+    });
+  });
+}
+
 export function insertIntoConfig() {
   return new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
@@ -99,6 +151,21 @@ export function insertIntoConfig() {
   });
 }
 
+export function selectFromJSON() {
+  return new Promise((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "SELECT * FROM json",
+        null,
+        (txObj, resultSet) => {
+          let json = resultSet.rows._array;
+          return resolve(json);
+        },
+        (): any => reject("selectFromJSON Failed")
+      );
+    });
+  });
+}
 export function selectFromConfig() {
   return new Promise((resolve, reject) => {
     db.transaction((tx) => {
@@ -139,4 +206,7 @@ export default {
   selectFromConfig,
   insertIntoConfig,
   createTableConfig,
+  dropTableJSON,
+  insertIntoJSON,
+  createTableJSON,
 };

@@ -1,5 +1,5 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { HomeStackNav } from "../navigation/StackNav";
+import { HomeStackNav, TutorialStackNav } from "../navigation/StackNav";
 import { Text } from "react-native";
 import Tutorials from "../screens/Tutorials";
 import { useSelector } from "react-redux";
@@ -13,18 +13,16 @@ export default function TutorialsDrawerNav({ navigation, route }) {
   return (
     <>
       <Drawer.Navigator>
-        <Drawer.Screen name="TutorialsDrawerNav" component={Tutorials} />
-        <>
-          {tutorials.map((tutorial) => {
-            return (
-              <Drawer.Screen
-                name={`${tutorial.name}`}
-                key={`${tutorial.key}`}
-                component={Tutorials}
-              />
-            );
-          })}
-        </>
+        <Drawer.Screen name="TutorialsDrawerNav" component={TutorialStackNav} />
+        {tutorials.map((tutorial) => {
+          return (
+            <Drawer.Screen
+              name={`${tutorial.name}`}
+              key={`${tutorial.key}`}
+              component={Tutorials}
+            />
+          );
+        })}
       </Drawer.Navigator>
     </>
   );

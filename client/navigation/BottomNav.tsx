@@ -6,11 +6,14 @@ import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TutorialsDrawerNav from "./TutorialDrawerNav";
 import ShopDrawerNav from "./ShopDrawerNav";
+import Tutorials from "../screens/Tutorials";
+import { TutorialStackNav } from "./StackNav";
 const Tab = createBottomTabNavigator();
 export default function BottomNav() {
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
+        initialRouteName="HomeStackNav"
         screenOptions={({ route }) => ({
           tabBarHideOnKeyboard: Platform.OS !== "ios",
           tabBarIcon: ({ focused, color, size }) => {
@@ -41,13 +44,13 @@ export default function BottomNav() {
         <Tab.Screen
           name="Home"
           component={HomeDrawerNav}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, unmountOnBlur: true }}
         />
         <Tab.Screen
           name="Tutorials"
-          component={TutorialsDrawerNav}
+          component={TutorialStackNav}
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
         />
         <Tab.Screen name="MyGrow" component={MyGrow} />

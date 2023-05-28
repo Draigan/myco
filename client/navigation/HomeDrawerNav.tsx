@@ -17,7 +17,7 @@ export default function HomeDrawerNav({ navigation, route }) {
           options={{
             headerTintColor: "#6146A5",
             headerShown: true,
-            headerTitle: "",
+            headerTitle: "Home",
           }}
           component={HomeStackNav}
         />
