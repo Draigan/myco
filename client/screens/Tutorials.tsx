@@ -8,7 +8,13 @@ import {
   StyleSheet,
   Keyboard,
 } from "react-native";
-import { Button, Card, List, Searchbar } from "react-native-paper";
+import {
+  Button,
+  Card,
+  List,
+  Searchbar,
+  TouchableRipple,
+} from "react-native-paper";
 import { useSelector } from "react-redux";
 import TutorialSearchBar from "../components/TutorialSearch";
 import { globalStyles } from "../styles/global";
@@ -16,11 +22,7 @@ import { globalStyles } from "../styles/global";
 const Tutorials = ({ navigation, routes }) => {
   // Ask redux for the tutorials
   const tutorials = useSelector((state: RootState) => state.tutorial.value);
-  const [filteredTutorial, setFilteredTutorial] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  console.log(tutorials, "FROM tuts");
-  console.log(typeof tutorials);
-  console.log(tutorials);
 
   return (
     <>
@@ -38,15 +40,27 @@ const Tutorials = ({ navigation, routes }) => {
           {/*  Render Category  */}
           {tutorials.map((tutorial, indexOne) => {
             return (
-              <View key={indexOne}>
-                <List.Accordion title={`${tutorial.name}`} id={`${indexOne}`}>
+              <View key={Math.random()}>
+                <List.Accordion
+                  title={`${tutorial.name}`}
+                  key={Math.random()}
+                  id={`${indexOne}`}
+                >
                   {/*  Render Items  */}
                   {tutorial.subtutorials.map((subtutorial, indexTwo) => {
                     return (
-                      <List.Item
-                        key={Number("indexOne" + "indexTwo")}
-                        title={`${subtutorial.name}`}
-                      />
+                      <TouchableRipple
+                        onPress={() => {
+                          navigation.navigate(`${subtutorial.name}`, {
+                            name: `${subtutorial.name}`,
+                          });
+                        }}
+                      >
+                        <List.Item
+                          key={Math.random()}
+                          title={`${subtutorial.name}`}
+                        />
+                      </TouchableRipple>
                     );
                   })}
                 </List.Accordion>
