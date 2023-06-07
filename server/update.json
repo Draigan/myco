@@ -6,21 +6,15 @@
       "subtutorials": [
         {
           "name": "What are BRF Cakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
-        }
-      ],
-      "textdata": "cool mang"
-    },
-    {
-      "name": "tutTwo",
-      "subtutorials": [
+          "textdata": "<Text>BRF cakes, also known as Brown Rice Flour cakes, are a common substrate used in the cultivation of magic mushrooms using the PF Tek (Psilocybe Fanaticus Technique). BRF cakes serve as the growth medium for mycelium, which eventually develops into fruiting mushrooms. The BRF cakes are made by mixing brown rice flour, vermiculite, and water to create a nutrient-rich substrate. This mixture provides the necessary nutrients and moisture for the mycelium to grow and colonize. </Text>"
+        },
         {
-          "name": "TUT TWO STUFF",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. IMAGE{https://1.bp.blogspot.com/-iCnFX7eWVjs/XR9NQutHXcI/AAAAAAAAJ9k/ISWH3UXgJF8QJdsV6P9wh3agzOwOF_aYgCLcBGAs/s1600/cat-1285634_1920.png} It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as IMAGE{https://1.bp.blogspot.com/-iCnFX7eWVjs/XR9NQutHXcI/AAAAAAAAJ9k/ISWH3UXgJF8QJdsV6P9wh3agzOwOF_aYgCLcBGAs/s1600/cat-1285634_1920.png} brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF IMAGE{https://1.bp.blogspot.com/-iCnFX7eWVjs/XR9NQutHXcI/AAAAAAAAJ9k/ISWH3UXgJF8QJdsV6P9wh3agzOwOF_aYgCLcBGAs/s1600/cat-1285634_1920.png} Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective IMAGE{https://1.bp.blogspot.com/-iCnFX7eWVjs/XR9NQutHXcI/AAAAAAAAJ9k/ISWH3UXgJF8QJdsV6P9wh3agzOwOF_aYgCLcBGAs/s1600/cat-1285634_1920.png} and sustainable way."
+          "name": "Preperation of the substrate",
+          "textdata": "<Text>1. In a mixing bowl, combine 2 parts brown rice flour with 2 parts vermiculite.{'\n'}2. Slowly add water while stirring the mixture until it reaches a consistency similar to damp sand. The mixture should hold together when squeezed but not be overly wet.{'\n'}3. Fill sterilized glass jars with the BRF mixture, leaving some headspace at the top for the substrate to expand during sterilization. {'\n'}4.Cover the jars with lids or aluminum foil and sterilize them using a pressure cooker or large pot with a tight-fitting lid. Sterilize the jars at 15 PSI for 60-90 minutes. This process kills any competing organisms or contaminants present in the substrate. {'\n'}5. Allow the sterilized jars to cool down to room temperature in a clean environment.{'\n'}6. Once the jars have cooled, they are ready for inoculation. Inject the spore solution using a sterile syringe through a small hole in the jar's lid or foil. Inject the spores into the substrate, distributing them evenly.<Text>"
         },
         {
           "name": "TUT TWO More stuff",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> {tutorial.name}</Text> <Card> <Card.Content> <Text variant='titleLarge'>Card title</Text> <Text variant='bodyMedium'>Card content</Text> </Card.Content> <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> </Card>"
         }
       ],
       "textdata": "cool mang two"
@@ -30,7 +24,7 @@
       "subtutorials": [
         {
           "name": "What are BRF Caasdkes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 3 "
@@ -40,7 +34,7 @@
       "subtutorials": [
         {
           "name": "What are BRF Cakeasvasv  s?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 4 "
@@ -50,7 +44,7 @@
       "subtutorials": [
         {
           "name": "What are BRF Cakeasdasds?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 5"
@@ -60,7 +54,7 @@
       "subtutorials": [
         {
           "name": "What are BRF asdasdCakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 6"
@@ -70,7 +64,7 @@
       "subtutorials": [
         {
           "name": "What asdasdasdasdare BRF Cakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang"
@@ -80,7 +74,7 @@
       "subtutorials": [
         {
           "name": "What are BRF Cak12321es?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang two"
@@ -90,7 +84,7 @@
       "subtutorials": [
         {
           "name": "What are BRF asdasdmxCakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 3 "
@@ -100,7 +94,7 @@
       "subtutorials": [
         {
           "name": "What are BRF Cake123123123s?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 4 "
@@ -110,7 +104,7 @@
       "subtutorials": [
         {
           "name": "What are BRF asdasdmmCakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 5"
@@ -120,7 +114,7 @@
       "subtutorials": [
         {
           "name": "What are BRF 111Cakes?",
-          "textdata": "The PF Tek method is a simple and efficient technique for growing gourmet mushrooms at home. It is often the first method used by beginners for mushroom cultivation. The method involves using sterilized substrates, such as brown rice flour, vermiculite, and perlite, in combination with spores of mushroom mycelium. The resulting fruiting bodies, or mushrooms, can be used for culinary purposes or as a source of food and medicine. With the PF Tek method, anyone can start growing their own delicious and nutritious mushrooms in a cost-effective and sustainable way."
+          "textdata": "<Text> SUP FROM BRF CAKES </Text>"
         }
       ],
       "textdata": "cool mang 6"

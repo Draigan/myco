@@ -50,16 +50,14 @@ const Tutorials = ({ navigation, routes }) => {
                   {tutorial.subtutorials.map((subtutorial, indexTwo) => {
                     return (
                       <TouchableRipple
+                        key={Math.random()}
                         onPress={() => {
                           navigation.navigate(`${subtutorial.name}`, {
                             name: `${subtutorial.name}`,
                           });
                         }}
                       >
-                        <List.Item
-                          key={Math.random()}
-                          title={`${subtutorial.name}`}
-                        />
+                        <List.Item title={`${subtutorial.name}`} />
                       </TouchableRipple>
                     );
                   })}

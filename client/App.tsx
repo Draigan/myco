@@ -1,26 +1,12 @@
-import {
-  DismissKeyboardView,
-  StyleSheet,
-  Keyboard,
-  Text,
-  View,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { registerRootComponent } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
-import { HomeStackNav } from "./navigation/StackNav";
-import BottomNav from "./navigation/BottomNav";
-import { useDispatch, useSelector } from "react-redux";
-import { setTutorial } from "./redux/slices/tutorialSlice";
 import { Provider } from "react-redux";
 import {
   Provider as PaperProvider,
   ActivityIndicator,
 } from "react-native-paper";
-import useFetch from "./hooks/useFetch";
 import useUpdate from "./hooks/useUpdate";
-import { useEffect, useState } from "react";
-import { selectFromTutorials } from "./SQL/SqlUpdate";
 import Main from "./Main";
 import { store } from "./redux/store/store";
 

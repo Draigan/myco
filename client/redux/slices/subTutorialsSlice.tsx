@@ -9,17 +9,17 @@ const initialState: TutorialState = {
   value: {},
 };
 
-export const tutorialSlice = createSlice({
-  name: "tutorial",
+export const subTutorialsSlice = createSlice({
+  name: "subtutorials",
   initialState,
   reducers: {
-    setTutorial: (state, action: PayloadAction<object>) => {
-      console.log("SET THE STATE OF TUTORIALS");
+    setSubTutorial: (state, action: PayloadAction<object>) => {
       state.value = action.payload;
+      console.log(state);
     },
   },
 });
 
-export const { setTutorial } = tutorialSlice.actions;
+export const { setSubTutorial } = subTutorialsSlice.actions;
 
-export default tutorialSlice.reducer;
+export default subTutorialsSlice.reducer;

@@ -1,29 +1,28 @@
 import BottomNav from "./navigation/BottomNav";
 import { setTutorial } from "./redux/slices/tutorialSlice";
+import { setSubTutorial, test } from "./redux/slices/subTutorialsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import {
-  TouchableWithoutFeedback,
-  DismissKeyboardView,
-  View,
-  Keyboard,
-} from "react-native";
 export default function Main({ tutorialsData }) {
-  const value = useSelector((state: RootState) => state.tutorial.value);
   const dispatch = useDispatch();
-  useEffect(() => {
-    // const tutorialsModified = tutorialsData.map((tutorial, index) => {
-    //   let subs = JSON.parse(tutorial.subtutorials);
-    //   tutorial.subtutorials = subs;
-    //
-    //   console.log(tutorial.subtutorials[0].name);
-    //
-    //   return tutorial;
-    // });
 
-    // console.log("MODIFIED", tutorialsModified);
-    console.log(tutorialsData, "from main");
+  //
+  // Set Tutorials and Sub Tutorials
+  //
+  useEffect(() => {
+    let subTutorials = [];
+    tutorialsData.tutorials.forEach((element) => {
+      element.subtutorials.forEach((subelement) => {
+        subTutorials.push(subelement);
+      });
+    });
     dispatch(setTutorial(tutorialsData.tutorials));
+    dispatch(setSubTutorial({ subTutorials }));
   }, []);
+
+  //
+  // Return the bottom navigator, which contains all other screens
+  //
+
   return <BottomNav />;
 }
